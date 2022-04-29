@@ -35,15 +35,16 @@ int main() {
 
     for(i=0; i<3; i++) {
         for(j=0; j<3; j++)
-            mat1[i][j] = 10;
-            //cin >> mat1[i][j];
+            cin >> mat1[i][j];
+            //mat1[i][j] = 10;
     }
 
     cout << "Enter the values for matrix2 (3X3): " << endl;
 
     for(i=0; i<3; i++) {
         for(j=0; j<3; j++)
-            mat2[i][j] = 10;
+            cin >> mat2[i][j];
+            //mat2[i][j] = 10;
     }
 
     //add matrix1 and matrix2
@@ -51,6 +52,9 @@ int main() {
         for(j=0; j<3; j++)
             matSum[i][j] = mat1[i][j] + mat2[i][j];
     }
+
+    //start timer here
+    t.reset();
 
     //print matrix1
     cout << endl << "Matrix1: " << endl;
@@ -79,6 +83,7 @@ int main() {
         cout << endl;
     }
 
+    //print time taken to run program
     cout << endl << "Time elapsed: " << t.elapsed() << endl;
 
     return 0;
