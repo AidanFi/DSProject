@@ -36,15 +36,6 @@ class Matrix {
         int& At(const int &row, const int &col) {   //returns a reference to a given value
             return data.at(row).at(col);
          }
-        
-        void printMatrix(const int &rows, const int &cols) {
-            if (rows == 0 || cols == 0)
-                cout << "Matrix is empty" << endl;
-            else {
-
-            }
-
-        }
 
     private:
         vector<vector<int>> data;
@@ -91,9 +82,11 @@ int main() {
     // cout << second.At(2, 3);
     // second.At(2, 3) = 8;
     // cout << second.At(2, 3);
-    // MatrixInfo(first);
-    // cin >> first;
-    // MatrixInfo(first);
+    MatrixInfo(first);
+    cin >> first;
+    MatrixInfo(first);
+    cout << first.At(1, 1) << endl;
+    cout << first.At(1, 2);
     
     return 0;
 }
