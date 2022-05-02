@@ -12,12 +12,10 @@ class Matrix {
         }
 
         void Reset(const int &rows, const int &cols) {
-            if (rows == 0 || cols == 0) {
+            if (rows == 0 || cols == 0) 
                 data.assign(0, vector<int>(0));
-            } 
-            else {
+            else 
                 data.assign(rows, vector<int>(cols));
-            }
         }
 
         int GetNumRows() const {
@@ -25,11 +23,11 @@ class Matrix {
         }
 
         int GetNumColumns() const {
-            if (GetNumRows() > 0) {
+            if (GetNumRows() > 0) 
                 return data[0].size();
-            }
             return 0;
         }
+
 
         int At(const int &row, const int &col) const {  //returns value at a given place in the matrix
             return data.at(row).at(col);
@@ -39,10 +37,21 @@ class Matrix {
             return data.at(row).at(col);
          }
         
+        void printMatrix(const int &rows, const int &cols) {
+            if (rows == 0 || cols == 0)
+                cout << "Matrix is empty" << endl;
+            else {
+
+            }
+
+        }
+
     private:
         vector<vector<int>> data;
 
 };
+
+
 
 istream& operator >>(istream& stream, Matrix& matrix) {
     int row = 0, col = 0;
@@ -55,8 +64,9 @@ istream& operator >>(istream& stream, Matrix& matrix) {
             stream >> matrix.At(i, j);
         }
     }
-
-    // format to input matrix
+    return stream;
+}
+// format to input matrix
     /* 
     2 2
     n n
@@ -67,10 +77,6 @@ istream& operator >>(istream& stream, Matrix& matrix) {
     n n n n
     n n n n
     */
-
-
-    return stream;
-}
 
 void MatrixInfo(const Matrix& m) {
     cout << "{ \"rows\": " << m.GetNumRows() << ", \"columns\": " << m.GetNumColumns() << " }" << endl;
@@ -85,9 +91,9 @@ int main() {
     // cout << second.At(2, 3);
     // second.At(2, 3) = 8;
     // cout << second.At(2, 3);
-    MatrixInfo(first);
-    cin >> first;
-    MatrixInfo(first);
-
+    // MatrixInfo(first);
+    // cin >> first;
+    // MatrixInfo(first);
+    
     return 0;
 }
